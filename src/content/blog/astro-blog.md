@@ -20,4 +20,4 @@ QiitaやZennとの棲み分けは決めておりませんが、こちらで書�
 
 ## 参考
 
-[lessmore.dev](https://github.com/hbsnow/lessmore.dev) 
+[hbsnow.dev](https://github.com/hbsnow/hbsnow.dev) 
