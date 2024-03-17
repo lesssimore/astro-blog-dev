@@ -21,4 +21,4 @@ export type Activity = (
     }
 ) & { title: string; date: string };
 
-export const activities: Activity[] = [...certification, ...events, ...feeds];
+export const activities: Activity[] = [];

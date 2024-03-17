@@ -17,7 +17,7 @@ export const Footer = (props: Props): JSX.Element => {
       <Container>
         <div className={styles.container}>
           <div className={styles.sns}>
-            <Link href="https://github.com/hbsnow" external>
+            <Link href="https://github.com/lesssimore" external>
               <SystemIcon name="github" aria-label="GitHub" />
             </Link>
             <Link href="https://twitter.com/hbsnow" external>
@@ -25,7 +25,7 @@ export const Footer = (props: Props): JSX.Element => {
             </Link>
           </div>
 
-          <div className={styles.copyright}>© 2022 hbsnow</div>
+          <div className={styles.copyright}>© 2024 hbsnow</div>
         </div>
       </Container>
     </footer>
