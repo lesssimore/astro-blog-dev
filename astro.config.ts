@@ -10,7 +10,7 @@ import remarkLinkCard from "remark-link-card";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://hbsnow.dev/",
+  site: "https://lessmore.dev/",
   integrations: [react(), sitemap()],
   markdown: {
     remarkPlugins: [remarkLinkCard],

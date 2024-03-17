@@ -10,8 +10,8 @@ export const get: APIRoute = async ({ site }) => {
   const blog = await getCollection("blog");
 
   return rss({
-    title: "hbsnow.dev blog feed",
-    description: "hbsnow.dev blog feed",
+    title: "lessmore.dev blog feed",
+    description: "lessmore.dev blog feed",
     site: new URL("/blog/", site).toString(),
     items: blog.map((post) => ({
       title: post.data.title,

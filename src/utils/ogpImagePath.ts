@@ -1,5 +1,5 @@
 export const ogpImagePath = (title: string) => {
-  const image = `${title.replace(" | hbsnow.dev", "")}.png`;
+  const image = `${title.replace(" | lessmore.dev", "")}.png`;
   const url = new URL(
     encodeURIComponent(image),
     "https://hbsnow-og-image.now.sh",
@@ -9,7 +9,7 @@ export const ogpImagePath = (title: string) => {
   url.searchParams.append("fontSize", "100px");
   url.searchParams.append(
     "images",
-    "https://hbsnow.dev/assets/img/logo/icon.svg",
+    "https://lessmore.dev/assets/img/logo/icon.svg",
   );
 
   return url.href;

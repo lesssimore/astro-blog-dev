@@ -20,7 +20,7 @@ export const Breadcrumb = (props: Props): JSX.Element => {
       <Container>
         <div className={styles.heading}>
           <Heading level={1}>
-            <Link href="/">hbsnow.dev</Link>
+            <Link href="/">lessmore.dev</Link>
           </Heading>
           {paths.map(({ name, href }) => {
             return (
