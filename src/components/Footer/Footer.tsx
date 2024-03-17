@@ -20,7 +20,7 @@ export const Footer = (props: Props): JSX.Element => {
             <Link href="https://github.com/lesssimore" external>
               <SystemIcon name="github" aria-label="GitHub" />
             </Link>
-            <Link href="https://twitter.com/hbsnow" external>
+            <Link href="https://twitter.com/lessismore_mimi" external>
               <SystemIcon name="twitter" aria-label="Twitter" />
             </Link>
           </div>
