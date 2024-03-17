@@ -25,7 +25,7 @@ export const Footer = (props: Props): JSX.Element => {
             </Link>
           </div>
 
-          <div className={styles.copyright}>© 2024 hbsnow</div>
+          <div className={styles.copyright}>© 2024 lessmore</div>
         </div>
       </Container>
     </footer>
