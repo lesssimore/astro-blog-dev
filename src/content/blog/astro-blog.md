@@ -1,7 +1,7 @@
 ---
 layout: "@/layouts/BlogPostLayout.astro"
 title: Astro にてBlogサイトを作りました
-tags: [astro, react, aws, cisco]
+tags: [astro, react, aws]
 description: ブログオープンしました
 createdAt: 2024-03-07
 ---
