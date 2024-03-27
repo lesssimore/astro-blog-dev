@@ -1,6 +1,6 @@
-import type { Activity } from ".";
+import type { Developer } from ".";
 
-export const events: Activity[] = [
+export const events: Developer[] = [
   {
     title: "クラスメソッドの最新開発ノウハウを学ぶ勉強会 〜エンジニア編〜",
     date: "2023-08-04",

@@ -1,12 +1,12 @@
-import type { Activity } from "@/data/activities";
+import type { Developer } from "@/data/activities";
 
-export const chunkByYear = (activities: Activity[]) => {
-  const chunked = new Map<number, Activity[]>();
+export const chunkByYear = (activities: Developer[]) => {
+  const chunked = new Map<number, Developer[]>();
 
-  for (const activity of activities) {
-    const year = new Date(activity.date).getFullYear();
-    const targetActivity = chunked.get(year) ?? [];
-    chunked.set(year, [...targetActivity, activity]);
+  for (const Developer of activities) {
+    const year = new Date(Developer.date).getFullYear();
+    const targetDeveloper = chunked.get(year) ?? [];
+    chunked.set(year, [...targetDeveloper, Developer]);
   }
 
   return chunked;

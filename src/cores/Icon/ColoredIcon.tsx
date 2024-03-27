@@ -4,7 +4,7 @@ import {
   type PropsWithChildren,
 } from "react";
 
-type IconType = "activity" | "blog" | "certification" | "event" | "file";
+type IconType = "Developer" | "blog" | "certification" | "event" | "file";
 
 type Props = Readonly<
   PropsWithChildren<{
@@ -26,7 +26,7 @@ const Component = (props: Props): JSX.Element => {
   };
 
   switch (name) {
-    case "activity":
+    case "Developer":
       // partAlternationMark
       return (
         <svg {...svgRestProps}>

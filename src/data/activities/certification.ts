@@ -1,11 +1,11 @@
-import type { Activity } from ".";
+import type { Developer } from ".";
 
 /**
  * AWS
  *
  * https://www.credly.com/users/hbsnow
  */
-const aws: Activity[] = [
+const aws: Developer[] = [
   {
     title: "2023 Japan AWS All Certifications Engineers 受賞",
     date: "2023-04-20",
@@ -78,7 +78,7 @@ const aws: Activity[] = [
  *
  * https://www.credential.net/profile/hbsnow
  */
-const googleCloud: Activity[] = [
+const googleCloud: Developer[] = [
   {
     title: "Google Cloud Professional Data Engineer",
     date: "2023-08-18",
@@ -111,7 +111,7 @@ const googleCloud: Activity[] = [
  *
  * https://campus.line.biz/mypage/certificates/
  */
-const line: Activity[] = [
+const line: Developer[] = [
   {
     title: "LINE公式アカウント Basic",
     date: "2023-01-21",
@@ -122,4 +122,4 @@ const line: Activity[] = [
   },
 ].map((v) => ({ type: "certification", category: "line", ...v }));
 
-export const certification: Activity[] = [...aws, ...googleCloud, ...line];
+export const certification: Developer[] = [...aws, ...googleCloud, ...line];

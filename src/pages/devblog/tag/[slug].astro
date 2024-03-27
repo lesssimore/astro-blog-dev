@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+
+import { BlogList } from "@/components/BlogList";
+import { Container } from "@/cores/Container";
+import { Heading } from "@/cores/Heading";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { filterPostByTag } from "@/utils/filterPostByTag";
+import { isNonNull } from "@/utils/isNonNull";
+import { sortPostByCreatedAt } from "@/utils/sortPostByCreatedAt";
+
+export const getStaticPaths = async () => {
+  const unsortedPosts = await getCollection("blog");
+  const posts = sortPostByCreatedAt(unsortedPosts);
+  const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)));
+  return tags.map((tag) => ({ params: { slug: tag } }));
+};
+
+const { slug } = Astro.params;
+
+if (!isNonNull(slug)) {
+  throw new Error("slug が指定されていません。");
+}
+
+const unsortedPosts = await getCollection("blog");
+const posts = filterPostByTag(sortPostByCreatedAt(unsortedPosts), `${slug}`);
+---
+
+<BaseLayout
+  seo={{
+    title: `${slug} | lessmore.dev`,
+    description: `hbsnow の${slug}のタグに分類されるブログ記事一覧。`,
+  }}
+  breadcrumb={[{ name: "blog", href: "/blog" }]}
+>
+  <main>
+    <Container>
+      <Heading level={2}>
+        Tag: {slug}
+      </Heading>
+
+      <div class="posts">
+        <BlogList posts={posts} />
+      </div>
+    </Container>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: var(--s5) 0;
+  }
+
+  .posts {
+    margin: var(--s0) 0 0;
+  }
+</style>

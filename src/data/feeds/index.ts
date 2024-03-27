@@ -1,7 +1,7 @@
 import developersio from "./developersio.json";
-import type { Activity } from "@/data/activities";
+import type { Developer } from "@/data/activities";
 
-export const feeds: Activity[] = [
+export const feeds: Developer[] = [
   ...developersio.items.map((item) => ({
     type: "blog" as const,
     category: "developersio" as const,

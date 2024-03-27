@@ -1,41 +1,41 @@
-import styles from "./ActivityListItem.module.css";
-import { ActivityState } from "./ActivityState";
+import styles from "./DeveloperListItem.module.css";
+import { DeveloperState } from "./DeveloperState";
 import { ColoredIcon, SystemIcon } from "@/cores/Icon";
 import { Link } from "@/cores/Link";
-import type { Activity } from "@/data/activities";
+import type { Developer } from "@/data/activities";
 
 type Props = {
-  activity: Activity;
+  Developer: Developer;
 };
 
-export const ActivityListItem = (props: Props): JSX.Element => {
-  const { activity } = props;
+export const DeveloperListItem = (props: Props): JSX.Element => {
+  const { Developer } = props;
 
   return (
     <div className={styles.root}>
       <div className={styles.icon}>
-        <ColoredIcon name={activity.type} width={20} height={20} />
+        <ColoredIcon name={Developer.type} width={20} height={20} />
       </div>
 
       <div>
         <div className={styles.state}>
-          <ActivityState activity={activity} />
+          <DeveloperState Developer={Developer} />
         </div>
-        <div className={styles.activity}>
-          {activity.url ? (
-            <Link external href={activity.url}>
-              {activity.title}
+        <div className={styles.Developer}>
+          {Developer.url ? (
+            <Link external href={Developer.url}>
+              {Developer.title}
             </Link>
           ) : (
-            <span>{activity.title}</span>
+            <span>{Developer.title}</span>
           )}
         </div>
-        {activity.type === "event" && activity.slide && (
-          <Link external href={activity.slide.url} className={styles.slide}>
+        {Developer.type === "event" && Developer.slide && (
+          <Link external href={Developer.slide.url} className={styles.slide}>
             <div className={styles.speakerdeck}>
               <SystemIcon name="speakerdeck" width={22} height={22} />
             </div>
-            <div>{activity.slide.title}</div>
+            <div>{Developer.slide.title}</div>
           </Link>
         )}
       </div>

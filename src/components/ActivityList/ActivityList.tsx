@@ -1,14 +1,14 @@
 import { memo, useMemo, useState, type ComponentProps } from "react";
 
-import styles from "./ActivityList.module.css";
-import { ActivityListItem } from "./ActivityListItem";
+import styles from "./DeveloperList.module.css";
+import { DeveloperListItem } from "./DeveloperListItem";
 import { ColoredIcon } from "@/cores/Icon";
-import type { Activity } from "@/data/activities";
+import type { Developer } from "@/data/activities";
 import { chunkByYear } from "@/utils/chunkByYear";
-import { sortActivityByDate } from "@/utils/sortActivityByDate";
+import { sortDeveloperByDate } from "@/utils/sortDeveloperByDate";
 
 type Props = {
-  activities: Activity[];
+  activities: Developer[];
 };
 
 const categories: {
@@ -38,12 +38,12 @@ const Component = (props: Props): JSX.Element => {
 
   const [selected, setSelected] = useState(categories.at(0)?.icon ?? "file");
 
-  const sorted = useMemo(() => sortActivityByDate(activities), [activities]);
+  const sorted = useMemo(() => sortDeveloperByDate(activities), [activities]);
   const filtered = useMemo(() => {
     if (selected === "file") {
       return sorted;
     }
-    return sorted.filter((activity) => activity.type === selected);
+    return sorted.filter((Developer) => Developer.type === selected);
   }, [sorted, selected]);
   const chunked = useMemo(() => Array.from(chunkByYear(filtered)), [filtered]);
 
@@ -71,9 +71,9 @@ const Component = (props: Props): JSX.Element => {
           <h2 className={styles.title}>{year}</h2>
 
           <div className={styles.activities} role="list">
-            {activities.map((activity) => (
-              <div role="listitem" key={`${activity.date}-${activity.title}`}>
-                <ActivityListItem activity={activity} />
+            {activities.map((Developer) => (
+              <div role="listitem" key={`${Developer.date}-${Developer.title}`}>
+                <DeveloperListItem Developer={Developer} />
               </div>
             ))}
           </div>
@@ -83,4 +83,4 @@ const Component = (props: Props): JSX.Element => {
   );
 };
 
-export const ActivityList = memo(Component);
+export const DeveloperList = memo(Component);

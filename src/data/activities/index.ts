@@ -2,15 +2,15 @@ import { certification } from "./certification";
 import { events } from "./events";
 import { feeds } from "@/data/feeds";
 
-export type Activity = (
+export type Developer = (
   | {
       type: "certification";
-      category: "aws" | "google-cloud" | "azure" | "line";
+      category: "aws" | "gcp" | "oci" | "network";
       url?: string;
     }
   | {
       type: "blog";
-      category: "developersio" | "zenn";
+      category: "qiita" | "zenn";
       url: string;
     }
   | {
@@ -21,4 +21,4 @@ export type Activity = (
     }
 ) & { title: string; date: string };
 
-export const activities: Activity[] = [];
+export const activities: Developer[] = [];

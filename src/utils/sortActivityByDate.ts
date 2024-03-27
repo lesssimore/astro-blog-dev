@@ -1,4 +1,4 @@
-export const sortActivityByDate = <
+export const sortDeveloperByDate = <
   T extends {
     date: string;
   },

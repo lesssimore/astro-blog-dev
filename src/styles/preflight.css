@@ -169,7 +169,7 @@ a:where(:visited) {
 }
 a:where([href="/"]:visited),
 a:where([href="/blog"]:visited),
-a:where([href="/activity"]:visited) {
+a:where([href="/Developer"]:visited) {
   color: var(--color-primary);
 }
 

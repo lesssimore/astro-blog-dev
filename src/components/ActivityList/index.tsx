@@ -1,3 +1,3 @@
-import { ActivityList } from "./ActivityList";
+import { DeveloperList } from "./DeveloperList";
 
-export { ActivityList };
+export { DeveloperList };

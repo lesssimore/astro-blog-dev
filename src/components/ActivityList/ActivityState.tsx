@@ -1,23 +1,23 @@
 import { useMemo } from "react";
 
 import { Link } from "@/cores/Link";
-import type { Activity } from "@/data/activities";
+import type { Developer } from "@/data/activities";
 import { formatDate } from "@/utils/formatDate";
 
 type Props = {
-  activity: Activity;
+  Developer: Developer;
 };
 
-export const ActivityState = (props: Props): JSX.Element => {
-  const { activity } = props;
+export const DeveloperState = (props: Props): JSX.Element => {
+  const { Developer } = props;
 
   const date = useMemo(
-    () => formatDate(activity.date, "MMM D"),
-    [activity.date],
+    () => formatDate(Developer.date, "MMM D"),
+    [Developer.date],
   );
 
-  if (activity.type === "blog") {
-    switch (activity.category) {
+  if (Developer.type === "blog") {
+    switch (Developer.category) {
       case "developersio":
         return (
           <span>
@@ -42,11 +42,11 @@ export const ActivityState = (props: Props): JSX.Element => {
     }
   }
 
-  if (activity.type === "certification") {
+  if (Developer.type === "certification") {
     return <span>get certified on {date}</span>;
   }
 
-  if (activity.type === "event") {
+  if (Developer.type === "event") {
     return <span>event on {date}</span>;
   }
 
